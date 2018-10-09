@@ -9,7 +9,7 @@ Hybrid app made with the Ionic framework for testing image-AI service of google 
 simple photo and then the image will be sent to the AI of google services and will send back the labels and it will spot if there are any faces in the image 
 with the relative feelings.
 <br>
-I made the App by Ionic framework and Angular i used as backend firebase:fire:
+I made the App by Ionic framework and Angular,firebase for backend :fire:
 
 <strong>Points : </strong>
 
