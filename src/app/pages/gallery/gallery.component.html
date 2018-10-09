@@ -1,0 +1,61 @@
+<div id="pageContent">
+    <br>
+
+
+    <div class="accorion-wrapper">
+
+
+
+        <mat-accordion multi="true">
+            <mat-expansion-panel class="expansion-panel-color" *ngFor="let item of gallery">
+                <mat-expansion-panel-header>
+                    Spot of {{item.dateNow.seconds*1000 | date:'mediumDate'}}
+                </mat-expansion-panel-header>
+                <div>
+                    <img [src]="item.url" class="img-gallery">
+                    <br>
+                    <div class="panel-desc">
+                        <div align="center" class="title-desc-container">
+                            <p class="panel-title-desc">labels</p>
+                        </div>
+                        <mat-chip-list>
+                            <mat-chip color="primary" selected *ngFor="let label of item.resultLabel">{{label}}</mat-chip>
+                        </mat-chip-list>
+                    </div>
+                    <br>
+                    <div class="panel-desc" *ngIf="checkIfFaces(item.faces)">
+                        <div align="center" class="title-desc-container">
+                            <p class="panel-title-desc">Faces</p>
+                        </div>
+                        <div id="labels" class="labels-chips">
+                            <mat-chip-list>
+                                <mat-chip color="primary" selected>total face spotted {{item.faces.totalFaces}}</mat-chip>
+                            </mat-chip-list>
+                            <div id="listFaces">
+                                <div *ngFor="let feeling of item.faces.feelings; let y = index">
+                                    <p class="list-feeling">Face N°{{y+1}}</p>
+                                    <p class="list-feeling">{{checkFeeling(feeling)}}</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<div id="loader" class="loader-wrapper" *ngIf="loader">
+    <div id="spinnerContainer" class="loader" align="center" style="margin-top:30%">
+        <p class="loader-text">Retrieving spot...</p>
+        <mat-spinner color="primary"></mat-spinner>
+    </div>
+</div>

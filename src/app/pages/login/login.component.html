@@ -1,0 +1,30 @@
+<div id="loginContainer">
+
+
+
+    <h2 class="title">
+        <span class="title-background">Sign in</span>
+    </h2>
+
+
+
+    <div id="loginButtonGoogle">
+        <button type="button" class="btn-google-login" (click)="googleLogin()">
+            <img class="logo-google" src="../../../assets/images/google.svg" alt="google logo">
+            <span class="text-btn-google">Sign in with Google</span>
+        </button>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div id="loader" class="loader-wrapper" *ngIf="loader">
+    <div id="spinnerContainer" class="loader" align="center">
+        <p class="loader-text">Retrieving User data...</p>
+        <mat-spinner color="primary"></mat-spinner>
+    </div>
+</div>

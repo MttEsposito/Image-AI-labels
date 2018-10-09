@@ -1,0 +1,84 @@
+<div id="pageContent">
+
+
+
+    <div align="center">
+        <button type="button" mat-raised-button color="primary" (click)="takePicture()">
+            <mat-icon>photo_camera</mat-icon> Take a picture
+        </button>
+    </div>
+    <br>
+
+
+
+    <div *ngIf="photo">
+
+
+
+        <div class="photo-container">
+            <img [src]="photo" class="photo-taken" />
+        </div>
+        <br>
+
+
+
+        <div id="labelContainer">
+            <span class="label-title-background">
+                <h3 align="center" class="label-text">Label</h3>
+            </span>
+            <div id="labels" class="labels-chips">
+                <mat-chip-list *ngIf="labels.length > 0">
+                    <mat-chip color="primary" selected *ngFor="let label of labels">{{label}}</mat-chip>
+                </mat-chip-list>
+                <div *ngIf="labels.length === 0">
+                    <p class="title-no-result">No hint found for this image</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+
+
+        <div id="faceContainer" *ngIf="facesPresent">
+            <span class="label-title-background">
+                <h3 align="center" class="label-text">Faces</h3>
+            </span>
+            <div id="labels" class="labels-chips">
+                <mat-chip-list>
+                    <mat-chip color="primary" selected>total face spotted {{faces.totalFaces}}</mat-chip>
+                </mat-chip-list>
+                <div>
+                    <div *ngFor="let feeling of faces.feelings; let i = index">
+                            <p class="list-feeling">Face N°{{i+1}}</p>
+                            <p class="list-feeling">{{checkFeeling(feeling)}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br>
+
+
+
+    </div>
+
+
+
+
+    <div id="loader" class="loader-wrapper" *ngIf="loader">
+        <div id="spinnerContainer" class="loader" align="center" style="margin-top: 35%">
+            <p class="loader-text">Doing magic AI ...</p>
+            <mat-spinner color="primary"></mat-spinner>
+        </div>
+    </div>
+
+
+
+
+</div>

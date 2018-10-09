@@ -1,0 +1,48 @@
+.accorion-wrapper {
+  margin: 5px;
+}
+
+.expansion-panel-color {
+  background: rgb(63, 81, 181);
+  color: rgb(255, 255, 255);
+}
+
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background: rgb(63, 81, 181);
+}
+
+.img-gallery {
+  width: 100%;
+  height: auto;
+}
+
+.panel-desc {
+  background-color: rgb(170, 179, 230);
+  padding: 5px;
+
+}
+
+.panel-title-desc {
+    color: #fff;
+    font-family: appfont;
+    background: #3f51b5;
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.title-desc-container{
+    margin-top: -22px;
+}
+
+.list-feeling{
+  background:rgb(63, 81, 181);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin: 8px 0px;
+  padding: 4px;
+}

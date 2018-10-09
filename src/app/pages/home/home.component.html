@@ -1,0 +1,41 @@
+<div class="bar-fixed">
+
+
+  
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <img [src]="user.photoURL" class="avatar" />
+      <span>{{user.displayName}}</span>
+      <span class="toolbar-spacer"></span>
+      <button type="button" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="example-icon" aria-label="menu app">more_vert</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+
+  <nav mat-tab-nav-bar backgroundColor="primary" class="toolbar-optimize-position">
+    <div *ngFor="let tab of tabs" class="tab-resize">
+      <a mat-tab-link [routerLink]="tab.path" routerLinkActive #rla="routerLinkActive" [active]="activeTab===tab.path"
+        class="tab-resize" [ngClass]="{'tab-active-color': activeTab===tab.path}">
+        {{tab.label}}
+      </a>
+    </div>
+  </nav>
+</div>
+
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item type="button" (click)="appSignOut()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span class="color-menu">Sign Out</span>
+  </button>
+</mat-menu>
+
+
+
+<ion-router-outlet></ion-router-outlet>
+
+
